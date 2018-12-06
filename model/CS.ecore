@@ -28,24 +28,65 @@
         lowerBound="1" eType="#//AttachSECURITYclearance"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bindingserveurconnectionm"
         lowerBound="1" eType="#//BindingServeurConnectionM"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceserveur" lowerBound="1"
+        eType="#//InterfaceServeur"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Client" eSuperTypes="cosa.ecore#//EComposant">
     <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceclient" lowerBound="1"
         eType="#//InterfaceClient"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RPC" eSuperTypes="cosa.ecore#//Configuration"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ConnectionManager" eSuperTypes="cosa.ecore#//EComposant"/>
-  <eClassifiers xsi:type="ecore:EClass" name="SecurityManager" eSuperTypes="cosa.ecore#//EComposant"/>
-  <eClassifiers xsi:type="ecore:EClass" name="DataBase" eSuperTypes="cosa.ecore#//EComposant"/>
-  <eClassifiers xsi:type="ecore:EClass" name="SQLquery" eSuperTypes="cosa.ecore#//EConnecteur"/>
-  <eClassifiers xsi:type="ecore:EClass" name="SecurityQuery" eSuperTypes="cosa.ecore#//EConnecteur"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ClearanceRequest" eSuperTypes="cosa.ecore#//EConnecteur"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AttachCONNECTIONsql" eSuperTypes="cosa.ecore#//Attachment"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AttachDBsql" eSuperTypes="cosa.ecore#//Attachment"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AttachDBsecurity" eSuperTypes="cosa.ecore#//Attachment"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AttachSECURITYsecurity" eSuperTypes="cosa.ecore#//Attachment"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AttachCONNECTIONclearance" eSuperTypes="cosa.ecore#//Attachment"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AttachSECURITYclearance" eSuperTypes="cosa.ecore#//Attachment"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RPC" eSuperTypes="cosa.ecore#//EConnecteur">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gluerpc" eType="#//GlueRPC"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interfacerpc" eType="#//InterfaceRPC"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConnectionManager" eSuperTypes="cosa.ecore#//EComposant">
+    <eStructuralFeatures xsi:type="ecore:EReference"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SecurityManager" eSuperTypes="cosa.ecore#//EComposant">
+    <eStructuralFeatures xsi:type="ecore:EReference"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataBase" eSuperTypes="cosa.ecore#//EComposant">
+    <eStructuralFeatures xsi:type="ecore:EReference"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SQLquery" eSuperTypes="cosa.ecore#//EConnecteur">
+    <eStructuralFeatures xsi:type="ecore:EReference"/>
+    <eStructuralFeatures xsi:type="ecore:EReference"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SecurityQuery" eSuperTypes="cosa.ecore#//EConnecteur">
+    <eStructuralFeatures xsi:type="ecore:EReference"/>
+    <eStructuralFeatures xsi:type="ecore:EReference"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClearanceRequest" eSuperTypes="cosa.ecore#//EConnecteur">
+    <eStructuralFeatures xsi:type="ecore:EReference"/>
+    <eStructuralFeatures xsi:type="ecore:EReference"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AttachCONNECTIONsql" eSuperTypes="cosa.ecore#//Attachment">
+    <eStructuralFeatures xsi:type="ecore:EReference"/>
+    <eStructuralFeatures xsi:type="ecore:EReference"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AttachDBsql" eSuperTypes="cosa.ecore#//Attachment">
+    <eStructuralFeatures xsi:type="ecore:EReference"/>
+    <eStructuralFeatures xsi:type="ecore:EReference"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AttachDBsecurity" eSuperTypes="cosa.ecore#//Attachment">
+    <eStructuralFeatures xsi:type="ecore:EReference"/>
+    <eStructuralFeatures xsi:type="ecore:EReference"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AttachSECURITYsecurity" eSuperTypes="cosa.ecore#//Attachment">
+    <eStructuralFeatures xsi:type="ecore:EReference"/>
+    <eStructuralFeatures xsi:type="ecore:EReference"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AttachCONNECTIONclearance" eSuperTypes="cosa.ecore#//Attachment">
+    <eStructuralFeatures xsi:type="ecore:EReference"/>
+    <eStructuralFeatures xsi:type="ecore:EReference"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AttachSECURITYclearance" eSuperTypes="cosa.ecore#//Attachment">
+    <eStructuralFeatures xsi:type="ecore:EReference"/>
+    <eStructuralFeatures xsi:type="ecore:EReference"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BindingServeurConnectionM" eSuperTypes="cosa.ecore#//Binding"/>
   <eClassifiers xsi:type="ecore:EClass" name="InterfaceClient" eSuperTypes="cosa.ecore#//InterfaceComposant"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InterfaceServeur" eSuperTypes="cosa.ecore#//InterfaceComposant"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GlueRPC" eSuperTypes="cosa.ecore#//Glue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InterfaceRPC" eSuperTypes="cosa.ecore#//InterfaceConnecteur"/>
 </ecore:EPackage>
