@@ -2,6 +2,7 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="cs" nsURI="http://www.example.org/cs" nsPrefix="cs">
   <eClassifiers xsi:type="ecore:EClass" name="Serveur" eSuperTypes="cosa.ecore#//Configuration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portrequisserveur"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceserveur" lowerBound="1"
         eType="#//InterfaceServeur"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="connectionmanager" lowerBound="1"
@@ -112,4 +113,5 @@
     <eStructuralFeatures xsi:type="ecore:EReference"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GlueRPC" eSuperTypes="cosa.ecore#//Glue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PortRequisServeur" eSuperTypes="cosa.ecore#//PortRequis"/>
 </ecore:EPackage>

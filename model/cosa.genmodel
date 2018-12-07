@@ -8,6 +8,9 @@
   <foreignModel>cosa.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="Cosa" disposableProviderFactory="true" ecorePackage="cosa.ecore#/">
+    <genClasses ecoreClass="cosa.ecore#//Element">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cosa.ecore#//Element/nom"/>
+    </genClasses>
     <genClasses ecoreClass="cosa.ecore#//Configuration">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa.ecore#//Configuration/interfaceconfig"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa.ecore#//Configuration/element"/>
@@ -16,10 +19,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa.ecore#//Configuration/attachment"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa.ecore#//Configuration/binding"/>
     </genClasses>
-    <genClasses ecoreClass="cosa.ecore#//Attachment">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cosa.ecore#//Attachment/interface"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cosa.ecore#//Attachment/interfaceconnecteur"/>
-    </genClasses>
     <genClasses ecoreClass="cosa.ecore#//EComposant">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa.ecore#//EComposant/interfacecomp"/>
     </genClasses>
@@ -27,36 +26,36 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa.ecore#//EConnecteur/glue"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa.ecore#//EConnecteur/interfaceconnecteur"/>
     </genClasses>
-    <genClasses ecoreClass="cosa.ecore#//InterfaceComposant">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa.ecore#//InterfaceComposant/port"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa.ecore#//InterfaceComposant/service"/>
+    <genClasses ecoreClass="cosa.ecore#//Glue"/>
+    <genClasses ecoreClass="cosa.ecore#//Interface">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cosa.ecore#//Interface/nomInterface"/>
     </genClasses>
+    <genClasses ecoreClass="cosa.ecore#//InterfaceComposant"/>
+    <genClasses ecoreClass="cosa.ecore#//InterfaceConnecteur"/>
+    <genClasses ecoreClass="cosa.ecore#//Port">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cosa.ecore#//Port/nomPort"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cosa.ecore#//Port/messagePort"/>
+    </genClasses>
+    <genClasses ecoreClass="cosa.ecore#//PortRequis"/>
     <genClasses ecoreClass="cosa.ecore#//PortFourni"/>
+    <genClasses ecoreClass="cosa.ecore#//Service">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cosa.ecore#//Service/nomService"/>
+    </genClasses>
     <genClasses ecoreClass="cosa.ecore#//ServiceRequis"/>
     <genClasses ecoreClass="cosa.ecore#//ServiceFourni"/>
-    <genClasses ecoreClass="cosa.ecore#//PortRequis"/>
-    <genClasses ecoreClass="cosa.ecore#//Binding">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cosa.ecore#//Binding/portrequis"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cosa.ecore#//Binding/portfourni"/>
-    </genClasses>
-    <genClasses ecoreClass="cosa.ecore#//Element">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cosa.ecore#//Element/nom"/>
-    </genClasses>
-    <genClasses ecoreClass="cosa.ecore#//Service">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cosa.ecore#//Service/nom"/>
-    </genClasses>
-    <genClasses ecoreClass="cosa.ecore#//Port">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cosa.ecore#//Port/nom"/>
-    </genClasses>
     <genClasses ecoreClass="cosa.ecore#//Role">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cosa.ecore#//Role/nom"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cosa.ecore#//Role/nomRole"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cosa.ecore#//Role/messageRole"/>
     </genClasses>
     <genClasses ecoreClass="cosa.ecore#//RoleRequis"/>
     <genClasses ecoreClass="cosa.ecore#//RoleFourni"/>
-    <genClasses ecoreClass="cosa.ecore#//Glue"/>
-    <genClasses ecoreClass="cosa.ecore#//Interface"/>
-    <genClasses ecoreClass="cosa.ecore#//InterfaceConnecteur">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa.ecore#//InterfaceConnecteur/role"/>
+    <genClasses ecoreClass="cosa.ecore#//Attachment">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cosa.ecore#//Attachment/interfaceconnecteur"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cosa.ecore#//Attachment/port"/>
+    </genClasses>
+    <genClasses ecoreClass="cosa.ecore#//Binding">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cosa.ecore#//Binding/portrequis"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cosa.ecore#//Binding/portfourni"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
