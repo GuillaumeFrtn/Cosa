@@ -34,7 +34,6 @@
     <genClasses ecoreClass="cosa.ecore#//InterfaceConnecteur"/>
     <genClasses ecoreClass="cosa.ecore#//Port">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cosa.ecore#//Port/nomPort"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cosa.ecore#//Port/messagePort"/>
     </genClasses>
     <genClasses ecoreClass="cosa.ecore#//PortRequis"/>
     <genClasses ecoreClass="cosa.ecore#//PortFourni"/>
@@ -45,7 +44,6 @@
     <genClasses ecoreClass="cosa.ecore#//ServiceFourni"/>
     <genClasses ecoreClass="cosa.ecore#//Role">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cosa.ecore#//Role/nomRole"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cosa.ecore#//Role/messageRole"/>
     </genClasses>
     <genClasses ecoreClass="cosa.ecore#//RoleRequis"/>
     <genClasses ecoreClass="cosa.ecore#//RoleFourni"/>

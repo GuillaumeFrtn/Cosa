@@ -2,9 +2,14 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="cs" nsURI="http://www.example.org/cs" nsPrefix="cs">
   <eClassifiers xsi:type="ecore:EClass" name="Serveur" eSuperTypes="cosa.ecore#//Configuration">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="portrequisserveur"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceserveur" lowerBound="1"
-        eType="#//InterfaceServeur"/>
+    <eOperations name="receptionRequeteClient"/>
+    <eOperations name="reponseRequeteClient"/>
+    <eOperations name="reponseRequeteConnectionM"/>
+    <eOperations name="envoieRequeteConnectionM"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portrequisserveur" lowerBound="1"
+        eType="#//PortRequisServeur"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portfourniserveur" lowerBound="1"
+        eType="#//PortFourniServeur"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="connectionmanager" lowerBound="1"
         eType="#//ConnectionManager"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="securitymanager" lowerBound="1"
@@ -32,41 +37,62 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="bindingserveurconnectionm"
         lowerBound="1" eType="#//BindingServeurConnectionM"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InterfaceServeur" eSuperTypes="cosa.ecore#//InterfaceComposant">
-    <eStructuralFeatures xsi:type="ecore:EReference"/>
-    <eStructuralFeatures xsi:type="ecore:EReference"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PortRequisServeur" eSuperTypes="cosa.ecore#//PortRequis"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PortFourniServeur" eSuperTypes="cosa.ecore#//PortFourni"/>
   <eClassifiers xsi:type="ecore:EClass" name="ConnectionManager" eSuperTypes="cosa.ecore#//EComposant">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceconnectionmanager"
-        lowerBound="1" eType="#//InterfaceConnectionManager"/>
+    <eOperations name="receptionRequeteServeur"/>
+    <eOperations name="envoieRequeteDataBase"/>
+    <eOperations name="receptionRequeteDataBase"/>
+    <eOperations name="envoieRequeteServeur"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portrequisserveurcm" lowerBound="1"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portrequisdatabasecm" lowerBound="1"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InterfaceConnectionManager" eSuperTypes="cosa.ecore#//InterfaceComposant"/>
-  <eClassifiers xsi:type="ecore:EClass" name="SecurityManager" eSuperTypes="cosa.ecore#//EComposant">
-    <eStructuralFeatures xsi:type="ecore:EReference"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Interfacesecuritymanager" eSuperTypes="cosa.ecore#//InterfaceComposant"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SecurityManager" eSuperTypes="cosa.ecore#//EComposant"/>
   <eClassifiers xsi:type="ecore:EClass" name="DataBase" eSuperTypes="cosa.ecore#//EComposant">
+    <eOperations/>
+    <eOperations/>
+    <eOperations/>
+    <eOperations/>
+    <eStructuralFeatures xsi:type="ecore:EReference"/>
+    <eStructuralFeatures xsi:type="ecore:EReference"/>
+    <eStructuralFeatures xsi:type="ecore:EReference"/>
     <eStructuralFeatures xsi:type="ecore:EReference"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InterfaceDataBase" eSuperTypes="cosa.ecore#//InterfaceComposant"/>
   <eClassifiers xsi:type="ecore:EClass" name="SQLquery" eSuperTypes="cosa.ecore#//EConnecteur">
+    <eOperations/>
+    <eStructuralFeatures xsi:type="ecore:EReference"/>
+    <eStructuralFeatures xsi:type="ecore:EReference"/>
+    <eStructuralFeatures xsi:type="ecore:EReference"/>
     <eStructuralFeatures xsi:type="ecore:EReference"/>
     <eStructuralFeatures xsi:type="ecore:EReference"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InterfaceSQLquery" eSuperTypes="cosa.ecore#//InterfaceConnecteur"/>
-  <eClassifiers xsi:type="ecore:EClass" name="GlueSQLquery" eSuperTypes="cosa.ecore#//Glue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GlueSQLquery" eSuperTypes="cosa.ecore#//Glue">
+    <eOperations/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SecurityQuery" eSuperTypes="cosa.ecore#//EConnecteur">
+    <eOperations/>
+    <eStructuralFeatures xsi:type="ecore:EReference"/>
+    <eStructuralFeatures xsi:type="ecore:EReference"/>
+    <eStructuralFeatures xsi:type="ecore:EReference"/>
     <eStructuralFeatures xsi:type="ecore:EReference"/>
     <eStructuralFeatures xsi:type="ecore:EReference"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InterfaceSecurityQuery" eSuperTypes="cosa.ecore#//InterfaceConnecteur"/>
-  <eClassifiers xsi:type="ecore:EClass" name="GlueSecurityRequest" eSuperTypes="cosa.ecore#//Glue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GlueSecurityRequest" eSuperTypes="cosa.ecore#//Glue">
+    <eOperations/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ClearanceRequest" eSuperTypes="cosa.ecore#//EConnecteur">
+    <eOperations/>
+    <eStructuralFeatures xsi:type="ecore:EReference"/>
+    <eStructuralFeatures xsi:type="ecore:EReference"/>
+    <eStructuralFeatures xsi:type="ecore:EReference"/>
     <eStructuralFeatures xsi:type="ecore:EReference"/>
     <eStructuralFeatures xsi:type="ecore:EReference"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InterfaceClearanceRequest" eSuperTypes="cosa.ecore#//InterfaceConnecteur"/>
-  <eClassifiers xsi:type="ecore:EClass" name="GlueClearanceRequest" eSuperTypes="cosa.ecore#//Glue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GlueClearanceRequest" eSuperTypes="cosa.ecore#//Glue">
+    <eOperations/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AttachCONNECTIONsql" eSuperTypes="cosa.ecore#//Attachment">
     <eStructuralFeatures xsi:type="ecore:EReference"/>
     <eStructuralFeatures xsi:type="ecore:EReference"/>
@@ -96,22 +122,31 @@
     <eStructuralFeatures xsi:type="ecore:EReference"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Client" eSuperTypes="cosa.ecore#//EComposant">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceclient" lowerBound="1"
-        eType="#//InterfaceClient"/>
+    <eOperations name="envoieRequeteClient"/>
+    <eOperations name="receptionRequeteClient"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portrequisclient" lowerBound="1"
+        eType="#//PortRequisClient"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portfournisclient" lowerBound="1"
+        eType="#//PortFourniClient"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InterfaceClient" eSuperTypes="cosa.ecore#//InterfaceComposant">
-    <eStructuralFeatures xsi:type="ecore:EReference"/>
-    <eStructuralFeatures xsi:type="ecore:EReference"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PortRequisClient" eSuperTypes="cosa.ecore#//PortRequis"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PortFourniClient" eSuperTypes="cosa.ecore#//PortFourni"/>
   <eClassifiers xsi:type="ecore:EClass" name="RPC" eSuperTypes="cosa.ecore#//EConnecteur">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="interfacerpc" lowerBound="1"
-        eType="#//InterfaceRPC"/>
+    <eOperations name="transfertMessageRPC"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="gluerpc" lowerBound="1"
         eType="#//GlueRPC"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rolerequisclient" lowerBound="1"
+        eType="#//RoleRequisRPC"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rolerequisserveur" lowerBound="1"
+        eType="#//RoleRequisRPC"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rolefourniclient" lowerBound="1"
+        eType="#//RoleFourniRPC"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rolefourniserveur" lowerBound="1"
+        eType="#//RoleRequisRPC"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InterfaceRPC" eSuperTypes="cosa.ecore#//InterfaceConnecteur">
-    <eStructuralFeatures xsi:type="ecore:EReference"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GlueRPC" eSuperTypes="cosa.ecore#//Glue">
+    <eOperations name="matchRoles" eType="ecore:EClass cosa.ecore#//Role"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GlueRPC" eSuperTypes="cosa.ecore#//Glue"/>
-  <eClassifiers xsi:type="ecore:EClass" name="PortRequisServeur" eSuperTypes="cosa.ecore#//PortRequis"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RoleRequisRPC" eSuperTypes="cosa.ecore#//RoleRequis"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RoleFourniRPC" eSuperTypes="cosa.ecore#//RoleFourni"/>
 </ecore:EPackage>

@@ -36,7 +36,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="InterfaceConnecteur" eSuperTypes="#//Interface"/>
   <eClassifiers xsi:type="ecore:EClass" name="Port" eSuperTypes="#//InterfaceComposant">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nomPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="messagePort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PortRequis" eSuperTypes="#//Port"/>
   <eClassifiers xsi:type="ecore:EClass" name="PortFourni" eSuperTypes="#//Port"/>
@@ -47,14 +46,13 @@
   <eClassifiers xsi:type="ecore:EClass" name="ServiceFourni" eSuperTypes="#//Service"/>
   <eClassifiers xsi:type="ecore:EClass" name="Role" eSuperTypes="#//InterfaceConnecteur">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nomRole" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="messageRole" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RoleRequis" eSuperTypes="#//Role"/>
   <eClassifiers xsi:type="ecore:EClass" name="RoleFourni" eSuperTypes="#//Role"/>
   <eClassifiers xsi:type="ecore:EClass" name="Attachment">
     <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceconnecteur" lowerBound="1"
         eType="#//InterfaceConnecteur"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="port" eType="#//Port"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="port" lowerBound="1" eType="#//Port"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Binding">
     <eStructuralFeatures xsi:type="ecore:EReference" name="portrequis" lowerBound="1"
