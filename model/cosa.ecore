@@ -13,7 +13,7 @@
         upperBound="-1" eType="#//EComposant" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="econnecteur" lowerBound="1"
         upperBound="-1" eType="#//EConnecteur" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="attachment" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attachment" lowerBound="2"
         upperBound="-1" eType="#//Attachment" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="binding" upperBound="-1"
         eType="#//Binding" containment="true"/>
@@ -29,35 +29,36 @@
         upperBound="-1" eType="#//InterfaceConnecteur" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Glue"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Interface">
+  <eClassifiers xsi:type="ecore:EClass" name="Interface" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nomInterface" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InterfaceComposant" eSuperTypes="#//Interface"/>
-  <eClassifiers xsi:type="ecore:EClass" name="InterfaceConnecteur" eSuperTypes="#//Interface"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Port" eSuperTypes="#//InterfaceComposant">
+  <eClassifiers xsi:type="ecore:EClass" name="InterfaceComposant" abstract="true"
+      eSuperTypes="#//Interface"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InterfaceConnecteur" abstract="true"
+      eSuperTypes="#//Interface"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Port" abstract="true" eSuperTypes="#//InterfaceComposant">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nomPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PortRequis" eSuperTypes="#//Port"/>
   <eClassifiers xsi:type="ecore:EClass" name="PortFourni" eSuperTypes="#//Port"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Service" eSuperTypes="#//InterfaceComposant">
+  <eClassifiers xsi:type="ecore:EClass" name="Service" abstract="true" eSuperTypes="#//InterfaceComposant">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nomService" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ServiceRequis" eSuperTypes="#//Service"/>
   <eClassifiers xsi:type="ecore:EClass" name="ServiceFourni" eSuperTypes="#//Service"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Role" eSuperTypes="#//InterfaceConnecteur">
+  <eClassifiers xsi:type="ecore:EClass" name="Role" abstract="true" eSuperTypes="#//InterfaceConnecteur">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nomRole" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RoleRequis" eSuperTypes="#//Role"/>
   <eClassifiers xsi:type="ecore:EClass" name="RoleFourni" eSuperTypes="#//Role"/>
   <eClassifiers xsi:type="ecore:EClass" name="Attachment">
     <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceconnecteur" lowerBound="1"
-        eType="#//InterfaceConnecteur"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="port" lowerBound="1" eType="#//Port"/>
+        upperBound="-1" eType="#//InterfaceConnecteur"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="port" lowerBound="1" upperBound="-1"
+        eType="#//Port"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Binding">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="portrequis" lowerBound="1"
-        eType="#//PortRequis"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="portfourni" lowerBound="1"
-        eType="#//PortFourni"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="port" lowerBound="2" upperBound="-1"
+        eType="#//Port"/>
   </eClassifiers>
 </ecore:EPackage>
