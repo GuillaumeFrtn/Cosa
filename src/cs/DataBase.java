@@ -127,5 +127,7 @@ public interface DataBase extends EComposant {
 	 * @generated
 	 */
 	void setServicefournidatabase(ServiceFourniDataBase value);
+	
+	void receiveNotify(PortRequisDataBase port, String message);
 
 } // DataBase

@@ -5,6 +5,7 @@ package cs.impl;
 import cosa.impl.RoleRequisImpl;
 
 import cs.CsPackage;
+import cs.RPC;
 import cs.RoleRequisRPC;
 
 import org.eclipse.emf.ecore.EClass;
@@ -17,6 +18,8 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public class RoleRequisRPCImpl extends RoleRequisImpl implements RoleRequisRPC {
+	
+	RPC observer;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -34,6 +37,18 @@ public class RoleRequisRPCImpl extends RoleRequisImpl implements RoleRequisRPC {
 	@Override
 	protected EClass eStaticClass() {
 		return CsPackage.Literals.ROLE_REQUIS_RPC;
+	}
+
+	@Override
+	public void addObserver(RPC observer) {
+		this.observer = observer;
+		
+	}
+
+	@Override
+	public void notifyRPC(String message) {
+		this.observer.transfertMessageRPCy(this, message);
+		
 	}
 
 } //RoleRequisRPCImpl

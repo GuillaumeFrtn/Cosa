@@ -5,6 +5,7 @@ package cs.impl;
 import cosa.impl.PortRequisImpl;
 
 import cs.CsPackage;
+import cs.DataBase;
 import cs.PortRequisDataBase;
 
 import org.eclipse.emf.ecore.EClass;
@@ -17,6 +18,8 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public class PortRequisDataBaseImpl extends PortRequisImpl implements PortRequisDataBase {
+	
+	DataBase observer;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -34,6 +37,18 @@ public class PortRequisDataBaseImpl extends PortRequisImpl implements PortRequis
 	@Override
 	protected EClass eStaticClass() {
 		return CsPackage.Literals.PORT_REQUIS_DATA_BASE;
+	}
+
+	@Override
+	public void addObserver(DataBase db) {
+		this.observer = db;
+		
+	}
+
+	@Override
+	public void notifyDataBase(String message) {
+		this.observer.receiveNotify(this, message);
+		
 	}
 
 } //PortRequisDataBaseImpl

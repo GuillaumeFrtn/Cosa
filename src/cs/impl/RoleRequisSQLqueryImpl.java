@@ -46,7 +46,7 @@ public class RoleRequisSQLqueryImpl extends RoleRequisImpl implements RoleRequis
 	}
 
 	public void notifySQLquery(String message) {
-		observer.receiveNotify(this, message);
+		observer.transfertMessageSQLquery(this, message);
 		
 	}
 

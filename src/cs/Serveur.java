@@ -289,5 +289,10 @@ public interface Serveur extends Configuration {
 	 * @generated
 	 */
 	void setBindingserveurconnectionm(BindingServeurConnectionM value);
+	
+	void transfert(PortFourniConnectionM port, String message);
+	void transfert(PortFourniDataBase port, String message);
+	void transfert(RoleFourniSQLquery role, String message);
+	void transfert(PortRequisServeur port, String message);
 
 } // Serveur

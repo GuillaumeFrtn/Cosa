@@ -116,12 +116,6 @@ public class SQLqueryImpl extends EConnecteurImpl implements SQLquery {
 		gluesqlquery.addCorrespondance(rolerequiscmsqlquery, rolefournisqlquerydb);
 		gluesqlquery.addCorrespondance(rolerequisdbsqlquery, rolefournisqlquerycm);
 	}
-	
-	public void receiveNotify(RoleRequisSQLquery roleRequis, String message)
-	{
-		RoleFourniSQLquery roleFourni = gluesqlquery.matchRolesSQLquery(roleRequis);
-		roleFourni.notifyServeur(roleFourni, message);
-	}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -335,7 +329,7 @@ public class SQLqueryImpl extends EConnecteurImpl implements SQLquery {
 	}
 	
 	public void transfertMessageSQLquery(RoleRequisSQLquery role, String message) {
-		RoleFourniSQLquery newrole = (RoleFourniSQLquery) gluesqlquery.matchRolesSQLquery(role);
+		RoleFourniSQLquery newrole = gluesqlquery.matchRolesSQLquery(role);
 		newrole.notifyServeur(newrole, message);
 	}
 

@@ -3,7 +3,7 @@
 package cs.impl;
 
 import cosa.impl.PortRequisImpl;
-
+import cs.ConnectionManager;
 import cs.CsPackage;
 import cs.PortRequisConnectionM;
 
@@ -17,6 +17,8 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public class PortRequisConnectionMImpl extends PortRequisImpl implements PortRequisConnectionM {
+	
+	ConnectionManager observer;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -34,6 +36,18 @@ public class PortRequisConnectionMImpl extends PortRequisImpl implements PortReq
 	@Override
 	protected EClass eStaticClass() {
 		return CsPackage.Literals.PORT_REQUIS_CONNECTION_M;
+	}
+
+	@Override
+	public void addObserver(ConnectionManager observer) {
+		this.observer = observer;
+		
+	}
+
+	@Override
+	public void notifyConnectionManager(String message) {
+		this.observer.receiveNotify(this, message);
+		
 	}
 
 } //PortRequisConnectionMImpl

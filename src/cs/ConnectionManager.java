@@ -181,5 +181,7 @@ public interface ConnectionManager extends EComposant {
 	 * @generated
 	 */
 	void setServicefourniconnectionm(ServiceFourniConnectionM value);
+	
+	void receiveNotify(PortRequisConnectionM portRequis, String message);
 
 } // ConnectionManager

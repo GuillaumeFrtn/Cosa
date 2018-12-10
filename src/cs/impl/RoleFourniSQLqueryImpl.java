@@ -6,6 +6,7 @@ import cosa.impl.RoleFourniImpl;
 
 import cs.CsPackage;
 import cs.RoleFourniSQLquery;
+import cs.Serveur;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -17,6 +18,8 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public class RoleFourniSQLqueryImpl extends RoleFourniImpl implements RoleFourniSQLquery {
+	
+	Serveur observer;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -34,6 +37,18 @@ public class RoleFourniSQLqueryImpl extends RoleFourniImpl implements RoleFourni
 	@Override
 	protected EClass eStaticClass() {
 		return CsPackage.Literals.ROLE_FOURNI_SQ_LQUERY;
+	}
+
+	@Override
+	public void addObserver(Serveur observer) {
+		this.observer = observer;
+		
+	}
+
+	@Override
+	public void notifyServeur(RoleFourniSQLquery newrole, String message) {
+		this.observer.transfert(this, message);
+		
 	}
 
 } //RoleFourniSQLqueryImpl

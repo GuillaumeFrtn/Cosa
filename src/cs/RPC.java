@@ -162,5 +162,6 @@ public interface RPC extends EConnecteur {
 	 * @generated
 	 */
 	void transfertMessageRPC();
+	void transfertMessageRPCy(RoleRequisRPC role, String message);
 
 } // RPC

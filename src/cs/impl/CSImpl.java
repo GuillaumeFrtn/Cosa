@@ -2,9 +2,6 @@ package cs.impl;
 
 import java.util.HashMap;
 
-import cosa.Attachment;
-import cosa.PortFourni;
-import cosa.RoleFourni;
 import cs.AttachClientrpc;
 import cs.AttachServeurrpc;
 import cs.Client;
@@ -31,9 +28,14 @@ public class CSImpl implements cs.CS {
 		rpc = new RPCImpl(this);
 		serveur = new ServeurImpl(this);
 		attachClientRPC = new AttachClientrpcImpl(rpc.getRolefourniclient(), client.getPortrequisclient(), client.getPortfournisclient(), rpc.getRolerequisclient());
-		attachServeurRPC = new AttachServeurrpcImpl();
+		attachServeurRPC = new AttachServeurrpcImpl(serveur.getPortrequisserveur(), rpc.getRolefourniserveur(), rpc.getRolerequisserveur(), serveur.getPortfourniserveur());
 		
 		rolesCorrespondanceClient = new HashMap<RoleFourniRPC, AttachClientrpc>();
+		rolesCorrespondanceServeur = new HashMap<RoleFourniRPC, AttachServeurrpc>();
+		
+		rolesCorrespondanceClient.put(rpc.getRolefourniclient(), attachClientRPC);
+		rolesCorrespondanceServeur.put(rpc.getRolefourniserveur(), attachServeurRPC);
+		
 	}
 	
 	public void transfert(PortFourniClient port, String message)

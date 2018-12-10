@@ -6,6 +6,7 @@ import cosa.impl.PortRequisImpl;
 
 import cs.CsPackage;
 import cs.PortRequisServeur;
+import cs.Serveur;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -17,6 +18,9 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public class PortRequisServeurImpl extends PortRequisImpl implements PortRequisServeur {
+	
+	Serveur observer;
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -34,6 +38,18 @@ public class PortRequisServeurImpl extends PortRequisImpl implements PortRequisS
 	@Override
 	protected EClass eStaticClass() {
 		return CsPackage.Literals.PORT_REQUIS_SERVEUR;
+	}
+
+	@Override
+	public void addObserver(Serveur observer) {
+		this.observer = observer;
+		
+	}
+
+	@Override
+	public void notifyServeur(String message) {
+		this.observer.transfert(this, message);
+		
 	}
 
 } //PortRequisServeurImpl

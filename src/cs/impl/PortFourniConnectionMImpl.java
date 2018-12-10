@@ -6,6 +6,7 @@ import cosa.impl.PortFourniImpl;
 
 import cs.CsPackage;
 import cs.PortFourniConnectionM;
+import cs.Serveur;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -17,6 +18,9 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public class PortFourniConnectionMImpl extends PortFourniImpl implements PortFourniConnectionM {
+	
+	Serveur observer;
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -34,6 +38,18 @@ public class PortFourniConnectionMImpl extends PortFourniImpl implements PortFou
 	@Override
 	protected EClass eStaticClass() {
 		return CsPackage.Literals.PORT_FOURNI_CONNECTION_M;
+	}
+
+	@Override
+	public void addObserver(Serveur observer) {
+		this.observer = observer;
+		
+	}
+
+	@Override
+	public void notifyServeur(String message) {
+		this.observer.transfert(this, message);
+		
 	}
 
 } //PortFourniConnectionMImpl

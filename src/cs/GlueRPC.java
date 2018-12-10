@@ -23,7 +23,7 @@ public interface GlueRPC extends Glue {
 	 * @generated
 	 */
 	void addCorrespondance(RoleRequisRPC rolerequis, RoleFourniRPC rolefourni);
-	RoleFourni matchRolesRPC(RoleRequisRPC key);
-	RoleFourni matchRolesRPC();
+	RoleFourniRPC matchRolesRPC(RoleRequisRPC key);
+	RoleFourniRPC matchRolesRPC();
 	
 } // GlueRPC

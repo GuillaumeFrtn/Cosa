@@ -162,5 +162,6 @@ public interface SQLquery extends EConnecteur {
 	 * @generated
 	 */
 	void transfertMessageSQLquery();
+	void transfertMessageSQLquery(RoleRequisSQLquery role, String message);
 
 } // SQLquery

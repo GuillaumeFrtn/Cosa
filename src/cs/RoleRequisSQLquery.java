@@ -17,5 +17,5 @@ import cosa.RoleRequis;
 public interface RoleRequisSQLquery extends RoleRequis {
 	
 	void addObserver(SQLquery observer);
-	void notifySQLquery();
+	void notifySQLquery(String message);
 } // RoleRequisSQLquery

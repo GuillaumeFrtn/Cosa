@@ -8,6 +8,7 @@ import cs.CsPackage;
 import cs.DataBase;
 import cs.PortFourniDataBase;
 import cs.PortRequisDataBase;
+import cs.Serveur;
 import cs.ServiceFourniDataBase;
 import cs.ServiceRequisDataBase;
 
@@ -86,10 +87,17 @@ public class DataBaseImpl extends EComposantImpl implements DataBase {
 	 */
 	protected DataBaseImpl() {
 		super();
+	}
+	
+	protected DataBaseImpl(Serveur observer) {
+		super();
 		portrequisdatabase = new PortRequisDataBaseImpl();
 		portfournidatabase = new PortFourniDataBaseImpl();
 		servicerequisdatabase = new ServiceRequisDataBaseImpl();
 		servicefournidatabase = new ServiceFourniDataBaseImpl();
+		
+		portrequisdatabase.addObserver(this);
+		portfournidatabase.addObserver(observer);
 		
 		données = new HashMap<String, String>();
 		données.put("voiture", "rouge");

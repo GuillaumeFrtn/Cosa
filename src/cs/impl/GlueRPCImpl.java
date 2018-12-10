@@ -54,13 +54,13 @@ public class GlueRPCImpl extends GlueImpl implements GlueRPC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RoleFourni matchRolesRPC() {
+	public RoleFourniRPC matchRolesRPC() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
 	}
 	
-	public RoleFourni matchRolesRPC(RoleRequisRPC key) {
+	public RoleFourniRPC matchRolesRPC(RoleRequisRPC key) {
 		return roleCorrespondant.get(key);
 	}
 	

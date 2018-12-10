@@ -333,7 +333,7 @@ public class RPCImpl extends EConnecteurImpl implements RPC {
 	}
 	
 	public void transfertMessageRPCy(RoleRequisRPC role, String message) {
-		RoleFourniRPC newrole = (RoleFourniRPC) gluerpc.matchRolesRPC(role);
+		RoleFourniRPC newrole = gluerpc.matchRolesRPC(role);
 		newrole.notifyConfig(newrole, message);
 	}
 

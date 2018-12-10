@@ -7,15 +7,22 @@ import cosa.impl.ConfigurationImpl;
 import cs.AttachCONNECTIONsql;
 import cs.AttachDBsql;
 import cs.BindingServeurConnectionM;
+import cs.CS;
 import cs.ConnectionManager;
 import cs.CsPackage;
 import cs.DataBase;
+import cs.PortFourniConnectionM;
+import cs.PortFourniDataBase;
 import cs.PortFourniServeur;
 import cs.PortRequisServeur;
+import cs.RoleFourniSQLquery;
+import cs.RoleRequisSQLquery;
 import cs.SQLquery;
 import cs.Serveur;
 import cs.ServiceFourniServeur;
 import cs.ServiceRequisServeur;
+
+import java.util.HashMap;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -146,6 +153,11 @@ public class ServeurImpl extends ConfigurationImpl implements Serveur {
 	 * @ordered
 	 */
 	protected BindingServeurConnectionM bindingserveurconnectionm;
+	
+	private HashMap<RoleFourniSQLquery, AttachCONNECTIONsql> rolesCorrespondanceCM;
+	private HashMap<RoleFourniSQLquery, AttachDBsql> rolesCorrespondanceDB;
+	private HashMap<PortFourniConnectionM, PortRequisServeur> portCorrespondanceServeur;
+	private HashMap<PortFourniConnectionM, RoleRequisSQLquery> portCorrespondanceSQLquery;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -154,6 +166,71 @@ public class ServeurImpl extends ConfigurationImpl implements Serveur {
 	 */
 	protected ServeurImpl() {
 		super();
+	}
+	
+	protected ServeurImpl(CS observer) {
+		super();
+		portrequisserveur = new PortRequisServeurImpl();
+		portfourniserveur = new PortFourniServeurImpl();
+		
+		portrequisserveur.addObserver(this);
+		portfourniserveur.addObserver(observer);
+		
+		servicerequisserveur = new ServiceRequisServeurImpl();
+		servicefourniserveur = new ServiceFourniServeurImpl();
+		
+		connectionmanager = new ConnectionManagerImpl(this);
+		database = new DataBaseImpl(this);
+		sqlquery = new SQLqueryImpl(this);
+		
+		attachconnectionsql = new AttachCONNECTIONsqlImpl();
+		attachdbsql = new AttachDBsqlImpl();
+		
+		bindingserveurconnectionm = new BindingServeurConnectionMImpl();
+		
+		rolesCorrespondanceCM = new HashMap<RoleFourniSQLquery, AttachCONNECTIONsql>();
+		rolesCorrespondanceDB = new HashMap<RoleFourniSQLquery, AttachDBsql>();
+		portCorrespondanceServeur = new HashMap<PortFourniConnectionM, PortRequisServeur>();
+		portCorrespondanceSQLquery = new HashMap<PortFourniConnectionM, RoleRequisSQLquery>();
+		
+		rolesCorrespondanceCM.put(sqlquery.getRolefournisqlquerycm(), attachconnectionsql);
+		rolesCorrespondanceDB.put(sqlquery.getRolefournisqlquerydb(), attachdbsql);
+		portCorrespondanceServeur.put(connectionmanager.getPortfournicmserveur(), portrequisserveur);
+		portCorrespondanceSQLquery.put(connectionmanager.getPortfournicmdatabase(), sqlquery.getRolerequiscmsqlquery());
+	}
+	
+	public void transfert(PortFourniConnectionM port, String message)
+	{
+		if(portCorrespondanceServeur.containsKey(port))
+		{
+			portfourniserveur.notifyConfig(message);
+		}
+		else if (portCorrespondanceSQLquery.containsKey(port))
+		{
+			attachconnectionsql.getCorrespondance(port).notifySQLquery(message);
+		}
+	}
+	
+	public void transfert(PortFourniDataBase port, String message)
+	{
+		attachdbsql.getCorrespondance(port).notifySQLquery(message);
+	}
+	
+	public void transfert(RoleFourniSQLquery role, String message)
+	{
+		if(rolesCorrespondanceCM.containsKey(role))
+		{
+			attachconnectionsql.getCorrespondance(role).notifyConnectionManager(message);
+		}
+		else if (rolesCorrespondanceDB.containsKey(role))
+		{
+			attachdbsql.getCorrespondance(role).notifyDataBase(message);
+		}
+	}
+	
+	public void transfert(PortRequisServeur port, String message)
+	{
+		bindingserveurconnectionm.getPortrequisserveurcm().notifyConnectionManager(message);
 	}
 
 	/**
