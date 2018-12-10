@@ -23,7 +23,7 @@ public interface GlueSQLquery extends Glue {
 	 * @generated
 	 */
 	void addCorrespondance(RoleRequisSQLquery roleRequis, RoleFourniSQLquery roleFourni);
-	RoleFourni matchRolesSQLquery(RoleRequisSQLquery key);
-	RoleFourni matchRolesSQLquery();
+	RoleFourniSQLquery matchRolesSQLquery(RoleRequisSQLquery key);
+	RoleFourniSQLquery matchRolesSQLquery();
 
 } // GlueSQLquery

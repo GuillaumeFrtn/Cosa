@@ -107,6 +107,10 @@ public class ConnectionManagerImpl extends EComposantImpl implements ConnectionM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	protected ConnectionManagerImpl() {
+		super();
+	}
+	
 	protected ConnectionManagerImpl(Serveur observer) {
 		super();
 		portrequisserveurcm = new PortRequisConnectionMImpl();

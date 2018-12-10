@@ -53,7 +53,7 @@ public class GlueSQLqueryImpl extends GlueImpl implements GlueSQLquery {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public RoleFourni matchRolesSQLquery(RoleRequisSQLquery key) {
+	public RoleFourniSQLquery matchRolesSQLquery(RoleRequisSQLquery key) {
 		return roleCorrespondant.get(key);
 	}
 	
@@ -62,7 +62,7 @@ public class GlueSQLqueryImpl extends GlueImpl implements GlueSQLquery {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RoleFourni matchRolesSQLquery() {
+	public RoleFourniSQLquery matchRolesSQLquery() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

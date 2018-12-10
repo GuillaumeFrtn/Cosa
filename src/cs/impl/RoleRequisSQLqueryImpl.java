@@ -6,6 +6,7 @@ import cosa.impl.RoleRequisImpl;
 
 import cs.CsPackage;
 import cs.RoleRequisSQLquery;
+import cs.SQLquery;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -17,6 +18,9 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public class RoleRequisSQLqueryImpl extends RoleRequisImpl implements RoleRequisSQLquery {
+	
+	private SQLquery observer;
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -34,6 +38,16 @@ public class RoleRequisSQLqueryImpl extends RoleRequisImpl implements RoleRequis
 	@Override
 	protected EClass eStaticClass() {
 		return CsPackage.Literals.ROLE_REQUIS_SQ_LQUERY;
+	}
+
+	public void addObserver(SQLquery observer) {
+		this.observer = observer;
+		
+	}
+
+	public void notifySQLquery(String message) {
+		observer.receiveNotify(this, message);
+		
 	}
 
 } //RoleRequisSQLqueryImpl

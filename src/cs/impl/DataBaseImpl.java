@@ -11,6 +11,8 @@ import cs.PortRequisDataBase;
 import cs.ServiceFourniDataBase;
 import cs.ServiceRequisDataBase;
 
+import java.util.HashMap;
+
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -74,6 +76,8 @@ public class DataBaseImpl extends EComposantImpl implements DataBase {
 	 * @ordered
 	 */
 	protected ServiceFourniDataBase servicefournidatabase;
+	
+	private HashMap<String, String> données;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -82,6 +86,19 @@ public class DataBaseImpl extends EComposantImpl implements DataBase {
 	 */
 	protected DataBaseImpl() {
 		super();
+		portrequisdatabase = new PortRequisDataBaseImpl();
+		portfournidatabase = new PortFourniDataBaseImpl();
+		servicerequisdatabase = new ServiceRequisDataBaseImpl();
+		servicefournidatabase = new ServiceFourniDataBaseImpl();
+		
+		données = new HashMap<String, String>();
+		données.put("voiture", "rouge");
+	}
+	
+	public void receiveNotify(PortRequisDataBase port, String message)
+	{
+		String reponse = données.get(message);
+		servicefournidatabase.envoieMessage(portfournidatabase, reponse);
 	}
 
 	/**
