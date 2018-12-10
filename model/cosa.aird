@@ -5,6 +5,7 @@
     <semanticResources>cosa.genmodel</semanticResources>
     <semanticResources>CS.ecore</semanticResources>
     <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
+    <semanticResources>cs.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_NgCEkPGIEeilr79QmBHQvg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_NjavwPGIEeilr79QmBHQvg" name="cosa" repPath="#_NhLUEPGIEeilr79QmBHQvg">

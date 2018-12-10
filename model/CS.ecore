@@ -26,12 +26,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="PortRequisServeur" eSuperTypes="cosa.ecore#//PortRequis"/>
   <eClassifiers xsi:type="ecore:EClass" name="PortFourniServeur" eSuperTypes="cosa.ecore#//PortFourni"/>
   <eClassifiers xsi:type="ecore:EClass" name="ServiceRequisServeur" eSuperTypes="cosa.ecore#//ServiceRequis">
-    <eOperations name="receptionRequeteClient"/>
-    <eOperations name="receptionReponseConnectionM"/>
+    <eOperations name="receptionMessage"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ServiceFourniServeur" eSuperTypes="cosa.ecore#//ServiceFourni">
-    <eOperations name="envoieReponseClient"/>
-    <eOperations name="envoieRequeteConnectionM"/>
+    <eOperations name="envoieMessage"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConnectionManager" eSuperTypes="cosa.ecore#//EComposant">
     <eStructuralFeatures xsi:type="ecore:EReference" name="portrequisserveurcm" lowerBound="1"
@@ -50,12 +48,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="PortRequisConnectionM" eSuperTypes="cosa.ecore#//PortRequis"/>
   <eClassifiers xsi:type="ecore:EClass" name="PortFourniConnectionM" eSuperTypes="cosa.ecore#//PortFourni"/>
   <eClassifiers xsi:type="ecore:EClass" name="ServiceRequisConnectionM" eSuperTypes="cosa.ecore#//ServiceRequis">
-    <eOperations name="receptionRequeteServeur"/>
-    <eOperations name="receptionReponseDataBase"/>
+    <eOperations name="receptionMessage"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ServiceFourniConnectionM" eSuperTypes="cosa.ecore#//ServiceFourni">
-    <eOperations name="envoieReponseServeur"/>
-    <eOperations name="envoieRequeteDataBase"/>
+    <eOperations name="envoieMessage"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataBase" eSuperTypes="cosa.ecore#//EComposant">
     <eStructuralFeatures xsi:type="ecore:EReference" name="portrequisdatabase" lowerBound="1"
@@ -70,10 +66,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="PortRequisDataBase" eSuperTypes="cosa.ecore#//PortRequis"/>
   <eClassifiers xsi:type="ecore:EClass" name="PortFourniDataBase" eSuperTypes="cosa.ecore#//PortFourni"/>
   <eClassifiers xsi:type="ecore:EClass" name="ServiceRequisDataBase" eSuperTypes="cosa.ecore#//ServiceRequis">
-    <eOperations name="receptionRequeteConnectionM"/>
+    <eOperations name="receptionMessage"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ServiceFourniDataBase" eSuperTypes="cosa.ecore#//ServiceFourni">
-    <eOperations name="envoieReponseConnectionM"/>
+    <eOperations name="envoieMessage"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SQLquery" eSuperTypes="cosa.ecore#//EConnecteur">
     <eOperations name="transfertMessageSQLquery"/>
@@ -136,10 +132,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="PortRequisClient" eSuperTypes="cosa.ecore#//PortRequis"/>
   <eClassifiers xsi:type="ecore:EClass" name="PortFourniClient" eSuperTypes="cosa.ecore#//PortFourni"/>
   <eClassifiers xsi:type="ecore:EClass" name="ServiceRequisClient" eSuperTypes="cosa.ecore#//ServiceRequis">
-    <eOperations name="receptionRequeteClient"/>
+    <eOperations name="receptionMessage"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ServiceFourniClient" eSuperTypes="cosa.ecore#//ServiceFourni">
-    <eOperations name="envoieRequeteClient"/>
+    <eOperations name="envoieMessage"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RPC" eSuperTypes="cosa.ecore#//EConnecteur">
     <eOperations name="transfertMessageRPC"/>

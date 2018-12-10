@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/Cosa/src" modelPluginID="Cosa" modelName="Cs"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>CS.ecore</foreignModel>
+  <genPackages prefix="Cs" disposableProviderFactory="true" ecorePackage="CS.ecore#/">
+    <genClasses ecoreClass="CS.ecore#//Serveur">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//Serveur/portrequisserveur"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//Serveur/portfourniserveur"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//Serveur/servicerequisserveur"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//Serveur/servicefourniserveur"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//Serveur/connectionmanager"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//Serveur/database"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//Serveur/sqlquery"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//Serveur/attachconnectionsql"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//Serveur/attachdbsql"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//Serveur/bindingserveurconnectionm"/>
+    </genClasses>
+    <genClasses ecoreClass="CS.ecore#//PortRequisServeur"/>
+    <genClasses ecoreClass="CS.ecore#//PortFourniServeur"/>
+    <genClasses ecoreClass="CS.ecore#//ServiceRequisServeur">
+      <genOperations ecoreOperation="CS.ecore#//ServiceRequisServeur/receptionMessage"/>
+    </genClasses>
+    <genClasses ecoreClass="CS.ecore#//ServiceFourniServeur">
+      <genOperations ecoreOperation="CS.ecore#//ServiceFourniServeur/envoieMessage"/>
+    </genClasses>
+    <genClasses ecoreClass="CS.ecore#//ConnectionManager">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//ConnectionManager/portrequisserveurcm"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//ConnectionManager/portrequisdatabasecm"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//ConnectionManager/portfournicmserveur"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//ConnectionManager/portfournicmdatabase"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//ConnectionManager/servicerequisconnectionm"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//ConnectionManager/servicefourniconnectionm"/>
+    </genClasses>
+    <genClasses ecoreClass="CS.ecore#//PortRequisConnectionM"/>
+    <genClasses ecoreClass="CS.ecore#//PortFourniConnectionM"/>
+    <genClasses ecoreClass="CS.ecore#//ServiceRequisConnectionM">
+      <genOperations ecoreOperation="CS.ecore#//ServiceRequisConnectionM/receptionMessage"/>
+    </genClasses>
+    <genClasses ecoreClass="CS.ecore#//ServiceFourniConnectionM">
+      <genOperations ecoreOperation="CS.ecore#//ServiceFourniConnectionM/envoieMessage"/>
+    </genClasses>
+    <genClasses ecoreClass="CS.ecore#//DataBase">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//DataBase/portrequisdatabase"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//DataBase/portfournidatabase"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//DataBase/servicerequisdatabase"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//DataBase/servicefournidatabase"/>
+    </genClasses>
+    <genClasses ecoreClass="CS.ecore#//PortRequisDataBase"/>
+    <genClasses ecoreClass="CS.ecore#//PortFourniDataBase"/>
+    <genClasses ecoreClass="CS.ecore#//ServiceRequisDataBase">
+      <genOperations ecoreOperation="CS.ecore#//ServiceRequisDataBase/receptionMessage"/>
+    </genClasses>
+    <genClasses ecoreClass="CS.ecore#//ServiceFourniDataBase">
+      <genOperations ecoreOperation="CS.ecore#//ServiceFourniDataBase/envoieMessage"/>
+    </genClasses>
+    <genClasses ecoreClass="CS.ecore#//SQLquery">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//SQLquery/gluesqlquery"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//SQLquery/rolerequiscmsqlquery"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//SQLquery/rolerequisdbsqlquery"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//SQLquery/rolefournisqlquerycm"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//SQLquery/rolefournisqlquerydb"/>
+      <genOperations ecoreOperation="CS.ecore#//SQLquery/transfertMessageSQLquery"/>
+    </genClasses>
+    <genClasses ecoreClass="CS.ecore#//GlueSQLquery">
+      <genOperations ecoreOperation="CS.ecore#//GlueSQLquery/matchRolesSQLquery"/>
+    </genClasses>
+    <genClasses ecoreClass="CS.ecore#//RoleRequisSQLquery"/>
+    <genClasses ecoreClass="CS.ecore#//RoleFourniSQLquery"/>
+    <genClasses ecoreClass="CS.ecore#//AttachCONNECTIONsql">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//AttachCONNECTIONsql/portfournicmdatabase"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//AttachCONNECTIONsql/rolerequiscmsqlquery"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//AttachCONNECTIONsql/rolefournisqlquerycm"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//AttachCONNECTIONsql/portrequisdatabasecm"/>
+    </genClasses>
+    <genClasses ecoreClass="CS.ecore#//AttachDBsql">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//AttachDBsql/rolefournisqlquerydb"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//AttachDBsql/portrequisdatabase"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//AttachDBsql/portfournidatabase"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//AttachDBsql/rolerequisdbsqlquery"/>
+    </genClasses>
+    <genClasses ecoreClass="CS.ecore#//BindingServeurConnectionM">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//BindingServeurConnectionM/portrequisserveur"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//BindingServeurConnectionM/portrequisserveurcm"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//BindingServeurConnectionM/portfournicmserveur"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//BindingServeurConnectionM/portfourniserveur"/>
+    </genClasses>
+    <genClasses ecoreClass="CS.ecore#//Client">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//Client/portrequisclient"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//Client/portfournisclient"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//Client/servicerequisclient"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//Client/servicefourniclient"/>
+    </genClasses>
+    <genClasses ecoreClass="CS.ecore#//PortRequisClient"/>
+    <genClasses ecoreClass="CS.ecore#//PortFourniClient"/>
+    <genClasses ecoreClass="CS.ecore#//ServiceRequisClient">
+      <genOperations ecoreOperation="CS.ecore#//ServiceRequisClient/receptionMessage"/>
+    </genClasses>
+    <genClasses ecoreClass="CS.ecore#//ServiceFourniClient">
+      <genOperations ecoreOperation="CS.ecore#//ServiceFourniClient/envoieMessage"/>
+    </genClasses>
+    <genClasses ecoreClass="CS.ecore#//RPC">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//RPC/gluerpc"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//RPC/rolerequisclient"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//RPC/rolerequisserveur"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//RPC/rolefourniclient"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//RPC/rolefourniserveur"/>
+      <genOperations ecoreOperation="CS.ecore#//RPC/transfertMessageRPC"/>
+    </genClasses>
+    <genClasses ecoreClass="CS.ecore#//GlueRPC">
+      <genOperations ecoreOperation="CS.ecore#//GlueRPC/matchRolesRPC"/>
+    </genClasses>
+    <genClasses ecoreClass="CS.ecore#//RoleRequisRPC"/>
+    <genClasses ecoreClass="CS.ecore#//RoleFourniRPC"/>
+    <genClasses ecoreClass="CS.ecore#//AttachClientrpc">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//AttachClientrpc/portrequisclient"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//AttachClientrpc/rolefourniclient"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//AttachClientrpc/rolerequisclient"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//AttachClientrpc/portfourniclient"/>
+    </genClasses>
+    <genClasses ecoreClass="CS.ecore#//AttachServeurrpc">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//AttachServeurrpc/portrequisserveur"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//AttachServeurrpc/rolefourniserveur"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//AttachServeurrpc/rolerequisserveur"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CS.ecore#//AttachServeurrpc/portfourniserveur"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="Cosa" disposableProviderFactory="true" ecorePackage="cosa.ecore#/">
+    <genClasses ecoreClass="cosa.ecore#//Element">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cosa.ecore#//Element/nom"/>
+    </genClasses>
+    <genClasses ecoreClass="cosa.ecore#//Configuration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa.ecore#//Configuration/interfaceconfig"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa.ecore#//Configuration/element"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa.ecore#//Configuration/ecomposant"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa.ecore#//Configuration/econnecteur"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa.ecore#//Configuration/attachment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa.ecore#//Configuration/binding"/>
+    </genClasses>
+    <genClasses ecoreClass="cosa.ecore#//EComposant">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa.ecore#//EComposant/interfacecomp"/>
+    </genClasses>
+    <genClasses ecoreClass="cosa.ecore#//EConnecteur">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa.ecore#//EConnecteur/glue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa.ecore#//EConnecteur/interfaceconnecteur"/>
+    </genClasses>
+    <genClasses ecoreClass="cosa.ecore#//Glue"/>
+    <genClasses image="false" ecoreClass="cosa.ecore#//Interface">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cosa.ecore#//Interface/nomInterface"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cosa.ecore#//InterfaceComposant"/>
+    <genClasses image="false" ecoreClass="cosa.ecore#//InterfaceConnecteur"/>
+    <genClasses image="false" ecoreClass="cosa.ecore#//Port">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cosa.ecore#//Port/nomPort"/>
+    </genClasses>
+    <genClasses ecoreClass="cosa.ecore#//PortRequis"/>
+    <genClasses ecoreClass="cosa.ecore#//PortFourni"/>
+    <genClasses image="false" ecoreClass="cosa.ecore#//Service">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cosa.ecore#//Service/nomService"/>
+    </genClasses>
+    <genClasses ecoreClass="cosa.ecore#//ServiceRequis"/>
+    <genClasses ecoreClass="cosa.ecore#//ServiceFourni"/>
+    <genClasses image="false" ecoreClass="cosa.ecore#//Role">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cosa.ecore#//Role/nomRole"/>
+    </genClasses>
+    <genClasses ecoreClass="cosa.ecore#//RoleRequis"/>
+    <genClasses ecoreClass="cosa.ecore#//RoleFourni"/>
+    <genClasses ecoreClass="cosa.ecore#//Attachment">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cosa.ecore#//Attachment/interfaceconnecteur"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cosa.ecore#//Attachment/port"/>
+    </genClasses>
+    <genClasses ecoreClass="cosa.ecore#//Binding">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cosa.ecore#//Binding/port"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
