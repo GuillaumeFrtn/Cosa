@@ -14,6 +14,8 @@ import cs.DataBase;
 import cs.PortFourniConnectionM;
 import cs.PortFourniDataBase;
 import cs.PortFourniServeur;
+import cs.PortRequisConnectionM;
+import cs.PortRequisDataBase;
 import cs.PortRequisServeur;
 import cs.RoleFourniSQLquery;
 import cs.RoleRequisSQLquery;
@@ -183,10 +185,10 @@ public class ServeurImpl extends ConfigurationImpl implements Serveur {
 		database = new DataBaseImpl(this);
 		sqlquery = new SQLqueryImpl(this);
 		
-		attachconnectionsql = new AttachCONNECTIONsqlImpl();
-		attachdbsql = new AttachDBsqlImpl();
+		attachconnectionsql = new AttachCONNECTIONsqlImpl(connectionmanager.getPortfournicmdatabase(), sqlquery.getRolerequiscmsqlquery(), sqlquery.getRolefournisqlquerycm(), connectionmanager.getPortrequisdatabasecm());
+		attachdbsql = new AttachDBsqlImpl(sqlquery.getRolefournisqlquerydb(), database.getPortrequisdatabase(), database.getPortfournidatabase(), sqlquery.getRolerequisdbsqlquery());
 		
-		bindingserveurconnectionm = new BindingServeurConnectionMImpl();
+		bindingserveurconnectionm = new BindingServeurConnectionMImpl(portrequisserveur, connectionmanager.getPortrequisserveurcm(), connectionmanager.getPortfournicmserveur(), portfourniserveur);
 		
 		rolesCorrespondanceCM = new HashMap<RoleFourniSQLquery, AttachCONNECTIONsql>();
 		rolesCorrespondanceDB = new HashMap<RoleFourniSQLquery, AttachDBsql>();

@@ -120,6 +120,8 @@ public class ConnectionManagerImpl extends EComposantImpl implements ConnectionM
 		servicerequisconnectionm = new ServiceRequisConnectionMImpl();
 		servicefourniconnectionm = new ServiceFourniConnectionMImpl();
 		
+		portCorrespondance = new HashMap<PortRequisConnectionM, PortFourniConnectionM>();
+		
 		portrequisserveurcm.addObserver(this);
 		portrequisdatabasecm.addObserver(this);
 		portfournicmserveur.addObserver(observer);

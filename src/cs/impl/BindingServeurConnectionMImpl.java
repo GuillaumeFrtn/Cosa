@@ -83,6 +83,14 @@ public class BindingServeurConnectionMImpl extends BindingImpl implements Bindin
 	protected BindingServeurConnectionMImpl() {
 		super();
 	}
+	
+	protected BindingServeurConnectionMImpl(PortRequisServeur portrequisserveur, PortRequisConnectionM portrequiscm, PortFourniConnectionM portfournicm, PortFourniServeur portfourniserveur) {
+		super();
+		this.portrequisserveur = portrequisserveur;
+		this.portrequisserveurcm = portrequiscm;
+		this.portfournicmserveur = portfournicm;
+		this.portfourniserveur = portfourniserveur;
+	}
 
 	/**
 	 * <!-- begin-user-doc -->

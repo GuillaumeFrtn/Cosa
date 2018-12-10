@@ -59,5 +59,10 @@ public class CSImpl implements cs.CS {
 			attachServeurRPC.getCorrespondance(role).notifyServeur(message);
 		}
 	}
+	
+	public void start()
+	{
+		client.getServicefourniclient().envoieRequeteClient(client.getPortfournisclient(), "voiture");
+	}
 
 }
